@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: var(--main-font);
+  font-family: var(--main-font, monospace);
   font-weight: var(--main-font-weight);
   font-size: var(--font-size);
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
@@ -13,35 +13,45 @@
   background-attachment: fixed;
 }
 
-/* .cover {
-  inline-size: 100%;
-  background-image: url(../images/cover-image-dark.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
+/* * { outline: 1px solid yellow; } */
+
 
 .title-decor {
-  color: var(--accent-text-color);
-  font-weight: var(--accent-font-weight);
+  font-weight: var(--main-font-weight);
   font-size: var(--font-size);
 }
 
-h2.title-decor {
-  /* display: inline-block; */
+p.header__text.title-decor {
   background-color: var(--accent-color);
+  font-weight: var(--accent-font-weight);
+  color: var(--accent-text-color);
+}
+
+h2.title-decor {
+  background-color: transparent;
+  font-weight: var(--accent-font-weight);
+  color: var(--accent-text-color-title);
 }
 
 h3.title-decor {
-  color: var(--accent-color-dark-theme);
-  /* background-color: transparent; */
+  background-color: var(--accent-color);
+  font-weight: var(--accent-font-weight);
+  color: var(--accent-text-color);
+  margin-bottom: 10px;
 }
 
-p.title-decor {
+h4.title-decor {
+  background-color: var(--accent-color);
+  font-weight: var(--main-font-weight);
+  color: var(--accent-text-color);
+  margin-bottom: 10px;
+}
+
+
+/* p.title-decor {
   color: var(--text-color);
   font-weight: var(--main-font-weight);
-}
+} */
 
 .accent-title-decor {
   color: var(--accent-color-title);
@@ -61,31 +71,39 @@ p.title-decor {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows:
-    minmax(min-content, max-content) 2.2fr minmax(min-content, max-content)
+    minmax(min-content, max-content) 2.3fr minmax(min-content, max-content)
     1fr minmax(min-content, max-content) 1fr;
-  min-block-size: 100vh;
+  /* min-block-size: 100vh; */
+  min-height: 100vh;
 }
 
-.header::before,
+
+.header::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+  border-top: 1px solid var(--accent-text-color-title);
+  border-right: 1px solid var(--accent-text-color-title);
+}
+
 .header::after {
   content: "";
   position: absolute;
   width: 25px;
   height: 25px;
-}
-
-.header::before {
-  top: 20px;
-  right: 20px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-}
-
-.header::after {
   bottom: 20px;
   left: 20px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-text-color-title);
+  border-left: 1px solid var(--accent-text-color-title);
+}
+
+p {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  line-height: 23.4px; 
 }
 
 .header__decorations::after {
@@ -104,15 +122,16 @@ p.title-decor {
   right: 29px;
   width: 10px;
   height: 10px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--accent-text-color-titler);
   border-radius: 50%;
-  background: var(--accent-color);
-  filter: blur(1px);
+  background: var(--accent-text-color-title);
+  box-shadow: 0 0 4px 2px var(--accent-text-color-title);
 }
+
 .header__theme-menu-button {
   border: none;
-  color: var(--accent-color);
-  font-family: var(--main-font);
+  color: var(--accent-text-color-title);
+  font-family: var(--main-font, monospace);
   background-color: transparent;
   cursor: pointer;
   height: 26px;
@@ -121,7 +140,7 @@ p.title-decor {
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-text-color-title);
   outline: none;
 }
 
@@ -131,7 +150,8 @@ p.title-decor {
 }
 
 .accent_link:hover {
-  text-decoration-line: underline;
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-color);
 }
 
 .accent_link:focus {
@@ -139,11 +159,11 @@ p.title-decor {
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid #ff0070;
+  border: 1px solid var(--button-hover-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid #ff0070;
+  border: 1px solid var(--accent-text-color-title);
   pointer-events: none;
 }
 
@@ -183,7 +203,7 @@ p.title-decor {
 } */
 
 .content__why {
-  padding: 60px 20px 80px;
+  padding: 60px 20px 60px;
 }
 
 .content__why-text {
@@ -194,25 +214,25 @@ p.title-decor {
   line-height: 23.4px;
 }
 
-.content__why-text h3 {
+.content__why-text h2 {
   grid-area: 1 / 1 / 2 / 2;
 }
 
 .content__why-card {
   /* grid-column: span 2; */
-  display: grid;
+  /* display: grid; */
   grid-area: 1 / 2 / 2 / 4;
   gap: 20px;
 }
 
-h2 {
+/* p {
   margin-bottom: 10px;
-}
+} */
 
 .content__what-card-text {
   display: grid;
   gap: 20px;
-  padding: 0 20px 80px;
+  padding: 0 20px 60px;
   line-height: 23.4px; /* 130% */
   grid-template: repeat(2, minmax(min-content, max-content)) / repeat(3, 1fr);
 }
@@ -231,22 +251,26 @@ h2 {
 .content__how-card-text {
   display: grid;
   gap: 20px;
-  padding: 0 20px 80px;
+  padding: 0 20px 60px;
   line-height: 23.4px; /* 130% */
   grid-template: repeat(2, minmax(min-content, max-content)) / repeat(3, 1fr);
 }
 
-.content__how-card-text h3 {
+.content__how-card-text h2 {
   grid-area: 1 / 1 / 3 / 2;
 }
 
-.content__how-card-text h2 {
+.content__how-card-text h3 {
   grid-area: 1 / 2 / 2 / 4;
   margin: 0;
 }
 
+.content__how-card-text p {
+  grid-area: 1 / 2 / 2 / 4;
+}
+
 .content__how-card {
-  display: grid;
+  /* display: grid; */
   grid-area: 2 / 2 / 3 / 4;
   gap: 20px;
   line-height: 23.4px; /* 130% */
@@ -266,18 +290,21 @@ h2 {
   align-items: stretch;
   gap: 20px;
   padding: 0 20px 60px;
-  grid-template: repeat(4, minmax(min-content, max-content)) / repeat(3, 1fr);
+  grid-template: repeat(4, minmax(min-content, max-content)) / repeat(auto-fit, 1fr);
 }
 
 .gallery__picture {
   object-fit: cover;
   object-position: center;
-  inline-size: 100%;
-  block-size: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-.gallery-title {
+h2.gallery-title {
   grid-area: 1/1/2/4;
+  background-color: var(--accent-color);
+  font-weight: var(--accent-font-weight);
+  color: var(--accent-text-color);
 }
 
 .sunset-img {
@@ -297,7 +324,7 @@ h2 {
   grid-area: 4/2/5/4;
 }
 
-h2.gallery-title {
+p.gallery-title {
   margin: 0;
 }
 
@@ -307,29 +334,31 @@ h2.gallery-title {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  min-block-size: 100vh;
+  /* min-block-size: 100vh; */
+  min-height: 100vh;
 }
 
-.footer::before,
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+  border-top: 1px solid var(--accent-text-color-title);
+  border-right: 1px solid var(--accent-text-color-title);
+}
+
 .footer::after {
   content: "";
   position: absolute;
   width: 25px;
   height: 25px;
-}
-
-.footer::before {
-  top: 20px;
-  right: 20px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-}
-
-.footer::after {
   bottom: 20px;
   left: 20px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-text-color-title);
+  border-left: 1px solid var(--accent-text-color-title);
 }
 
 @media (376px <= width <= 768px) {
@@ -341,8 +370,8 @@ h2.gallery-title {
 
   .header {
     grid-template-rows:
-      minmax(min-content, max-content) 2.7fr minmax(min-content, max-content)
-      0.9fr minmax(min-content, max-content) 1fr;
+      minmax(min-content, max-content) 2.8fr minmax(min-content, max-content)
+      0.95fr minmax(min-content, max-content) 1fr;
     min-block-size: 100vh;
   }
 
@@ -373,6 +402,10 @@ h2.gallery-title {
   footer .accent-title-decor {
     text-shadow: 4px 4px 0px var(--accent-color);
   }
+
+  .content__what-card {
+    gap: 0;
+}
 }
 
 @media (width <= 375px) {
@@ -427,7 +460,7 @@ h2.gallery-title {
   }
 
   .content__why {
-    padding: 40px 10px 50px;
+    padding: 40px 10px 30px;
   }
 
   .content__why-text {
@@ -435,22 +468,23 @@ h2.gallery-title {
     grid-template-rows: 2fr;
   }
 
-  .content__why-text h3 {
+  .content__why-text h2 {
     grid-area: 1/1/1/1;
   }
 
   .content__why-card {
     grid-area: 2/1/3/1;
-  }
 
-  h2 {
-    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
   }
 
   .content__what-card-text {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr;
-    padding: 0 10px 50px;
+    padding: 0 10px 30px;
   }
 
   .content__what-card-text .content__title {
@@ -460,18 +494,19 @@ h2.gallery-title {
   .content__what-card {
     grid-row: 2;
     grid-template: 1fr / 1fr;
+    gap: 0;
   }
 
   .content__how-card-text {
-    padding: 0 10px 50px;
+    padding: 0 10px 30px;
     grid-template: repeat(3, minmax(min-content, max-content)) / 1fr;
   }
 
-  .content__how-card-text h3 {
+  .content__how-card-text h2 {
     grid-area: 1/1/2/2;
   }
 
-  .content__how-card-text h2 {
+  .content__how-card-text h3 {
     grid-area: 2/1/3/2;
   }
 
@@ -484,28 +519,28 @@ h2.gallery-title {
     align-items: stretch;
     gap: 10px;
     padding: 0 10px 40px;
-    grid-template: repeat(5, minmax(min-content, max-content)) / 1fr;
+    grid-template: repeat(5, minmax(min-content, max-content)) / repeat(1, 1fr);
   }
 
   .gallery-title {
-    grid-area: 1/1/2/2;
+    grid-area: 1/1/2/4;
   }
 
   .sunset-img {
-    grid-area: 2/1/3/2;
+    grid-area: 2/1/3/4;
   }
   .ice-cream-img {
-    grid-area: 3/1/4/2;
+    grid-area: 3/1/4/4;
   }
   .tape-img {
-    grid-area: 4/1/5/2;
+    grid-area: 4/1/5/4;
   }
 
   .books-img {
-    grid-area: 5/1/6/2;
+    grid-area: 5/1/6/4;
   }
   .street-img {
-    grid-area: 6/1/7/2;
+    grid-area: 6/1/7/4;
   }
 
   .footer {
@@ -521,4 +556,8 @@ h2.gallery-title {
     bottom: 10px;
     left: 10px;
   }
+
+  
 }
+
+
