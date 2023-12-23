@@ -28,7 +28,7 @@
   font-size: var(--font-size);
 }
 
-h2.title-decor  {
+h2.title-decor {
   /* display: inline-block; */
   background-color: var(--accent-color);
 }
