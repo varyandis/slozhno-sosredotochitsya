@@ -15,10 +15,6 @@
   --accent-font-weight: 700;
   --font-size: 18px;
   background-image: url(../images/cover-image-dark.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -26,12 +22,12 @@
   outline: none;
 }
 
-h3.title-decor.theme_dark {
+.theme_dark h3.title-decor {
   color: var(--accent-color);
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
-p.title-decor.theme_dark {
+.theme_dark p.title-decor {
   color: var(--text-color);
   font-weight: var(--main-font-weight);
 }
