@@ -28,14 +28,14 @@
   font-size: var(--font-size);
 }
 
-h2.title-decor {
+h2.title-decor  {
   /* display: inline-block; */
   background-color: var(--accent-color);
 }
 
 h3.title-decor {
   color: var(--accent-color-dark-theme);
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 p.title-decor {
@@ -115,6 +115,9 @@ p.title-decor {
   font-family: var(--main-font);
   background-color: transparent;
   cursor: pointer;
+  height: 26px;
+  padding: 0 13px;
+  text-transform: lowercase;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -173,11 +176,11 @@ p.title-decor {
   background-color: var(--accent-color);
 }
 
-.header__theme-menu-button {
+/* .header__theme-menu-button {
   height: 26px;
   padding: 0 13px;
   text-transform: lowercase;
-}
+} */
 
 .content__why {
   padding: 60px 20px 80px;
