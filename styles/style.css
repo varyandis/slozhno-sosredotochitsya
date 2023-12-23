@@ -396,15 +396,13 @@ p.gallery-title {
 
   .content__what-card {
     grid-template: repeat(3, max-content) / 1fr;
+    gap: 0;
   }
 
   footer .accent-title-decor {
     text-shadow: 4px 4px 0px var(--accent-color);
   }
 
-  .content__what-card {
-    gap: 0;
-  }
 }
 
 @media (width <= 375px) {
