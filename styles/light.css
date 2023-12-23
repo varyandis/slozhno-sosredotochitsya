@@ -5,7 +5,7 @@
 */
 
 .theme_light.page {
-  --bg-color: #353430;
+  --bg-color: #FFF1F7;
   --text-color: #f1b2ce;
   --accent-text-color: #000028;
   --accent-color-light-theme: #353430;
@@ -16,6 +16,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  background-color: var(--bg-color);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -92,12 +93,13 @@ p.title-decor.theme_light {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-color: #353430;
+    --bg-color: #FFF1F7;
     --text-color: #f1b2ce;
     --accent-text-color: #000028;
     --accent-color-light-theme: #353430;
     --accent-color: #ff8dcb;
     --accent-color-title: #ffc2e6;
+    background-color: var(--bg-color);
   }
 
   .page {
