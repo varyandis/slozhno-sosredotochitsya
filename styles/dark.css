@@ -22,12 +22,12 @@
   outline: none;
 }
 
-.theme_dark h3.title-decor {
+h3.title-decor.theme_dark {
   color: var(--accent-color);
   background-color: transparent;
 }
 
-.theme_dark p.title-decor {
+p.title-decor.theme_dark  {
   color: var(--text-color);
   font-weight: var(--main-font-weight);
 }

@@ -19,12 +19,12 @@
   outline: none;
 }
 
-.theme_light h3.title-decor {
+h3.title-decor.theme_light {
   color: var(--accent-color-light-theme);
   background-color: transparent;
 }
 
-.theme_light p.title-decor {
+p.title-decor.theme_light {
   color: var(--accent-color-light-theme);
   font-weight: var(--main-font-weight);
 }
