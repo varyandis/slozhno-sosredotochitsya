@@ -72,7 +72,6 @@ h4.title-decor {
     minmax(min-content, max-content) 2.3fr minmax(min-content, max-content)
     1fr minmax(min-content, max-content) 1fr;
   min-height: 768px;
-  min-block-size: 100vh;
   block-size: 100vh;
 }
 
