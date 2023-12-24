@@ -383,7 +383,7 @@ p.gallery-title {
   border-left: 1px solid var(--accent-text-color-title);
 } */
 
-@media (768px <= width <= 1024px) {
+@media (768px <= width <= 1023px) {
   .header__theme-menu {
     grid-area: 2/2/3/3;
     justify-content: end;
