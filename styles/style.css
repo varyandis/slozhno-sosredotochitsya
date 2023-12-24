@@ -71,11 +71,12 @@ h4.title-decor {
   grid-template-rows:
     minmax(min-content, max-content) 2.3fr minmax(min-content, max-content)
     1fr minmax(min-content, max-content) 1fr;
-  /* min-block-size: 100vh; */
-  min-height: 100vh;
+  min-block-size: 100vh;
+  block-size: 100vh;
+  min-height: 768px;
 }
 
-.header::before {
+/* .header::before {
   content: "";
   position: absolute;
   top: 20px;
@@ -95,7 +96,32 @@ h4.title-decor {
   height: 25px;
   border-bottom: 1px solid var(--accent-text-color-title);
   border-left: 1px solid var(--accent-text-color-title);
+} */
+
+
+
+.decorations::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-text-color-title);
+  border-right: 1px solid var(--accent-text-color-title);
 }
+
+.decorations::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-text-color-title);
+  border-left: 1px solid var(--accent-text-color-title);
+}
+
 
 p {
   margin-bottom: 20px;
@@ -334,11 +360,12 @@ p.gallery-title {
   justify-content: center;
   align-items: center;
   /* min-block-size: 100vh; */
-  min-height: 100vh;
+  block-size: 100vh;
+  min-height: 768px;
   padding: 20px;
 }
 
-.footer::before {
+/* .footer::before {
   content: "";
   position: absolute;
   top: 20px;
@@ -358,9 +385,9 @@ p.gallery-title {
   height: 25px;
   border-bottom: 1px solid var(--accent-text-color-title);
   border-left: 1px solid var(--accent-text-color-title);
-}
+} */
 
-@media (376px <= width <= 768px) {
+@media (768px <= width <= 1024px) {
   .header__theme-menu {
     grid-area: 2/2/3/3;
     justify-content: end;
@@ -371,7 +398,7 @@ p.gallery-title {
     grid-template-rows:
       minmax(min-content, max-content) 2.8fr minmax(min-content, max-content)
       0.95fr minmax(min-content, max-content) 1fr;
-    min-block-size: 100vh;
+      min-height: 1024px;
   }
 
   .header__theme-menu-list {
@@ -402,10 +429,9 @@ p.gallery-title {
   footer .accent-title-decor {
     text-shadow: 4px 4px 0px var(--accent-color);
   }
-
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .header::before {
     top: 10px;
     right: 10px;
@@ -436,7 +462,7 @@ p.gallery-title {
     grid-template-rows:
       minmax(min-content, max-content) 4.5fr minmax(min-content, max-content)
       1fr minmax(min-content, max-content) 1.3fr;
-    min-block-size: 100vh;
+      min-height: 667px;
   }
 
   .header__theme-menu-list {
@@ -541,6 +567,7 @@ p.gallery-title {
 
   .footer {
     padding: 10px;
+    min-height: 667px;
   }
 
   .footer::before {
@@ -553,3 +580,4 @@ p.gallery-title {
     left: 10px;
   }
 }
+

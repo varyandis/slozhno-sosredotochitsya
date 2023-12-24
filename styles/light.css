@@ -14,10 +14,6 @@
   --accent-color-title: #ffc2e6;
   --button-hover-color: rgba(50, 49, 45, 0.4);
   background-image: url(../images/cover-image-light.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .theme_light .header__decorations {
