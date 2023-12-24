@@ -71,9 +71,9 @@ h4.title-decor {
   grid-template-rows:
     minmax(min-content, max-content) 2.3fr minmax(min-content, max-content)
     1fr minmax(min-content, max-content) 1fr;
+  min-height: 768px;
   min-block-size: 100vh;
   block-size: 100vh;
-  min-height: 768px;
 }
 
 /* .header::before {
@@ -98,8 +98,6 @@ h4.title-decor {
   border-left: 1px solid var(--accent-text-color-title);
 } */
 
-
-
 .decorations::before {
   content: "";
   position: absolute;
@@ -121,7 +119,6 @@ h4.title-decor {
   border-bottom: 1px solid var(--accent-text-color-title);
   border-left: 1px solid var(--accent-text-color-title);
 }
-
 
 p {
   margin-bottom: 20px;
@@ -359,10 +356,10 @@ p.gallery-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-block-size: 100vh; */
-  block-size: 100vh;
   min-height: 768px;
   padding: 20px;
+  /* min-block-size: 100vh; */
+  block-size: 100vh;
 }
 
 /* .footer::before {
@@ -398,7 +395,7 @@ p.gallery-title {
     grid-template-rows:
       minmax(min-content, max-content) 2.8fr minmax(min-content, max-content)
       0.95fr minmax(min-content, max-content) 1fr;
-      min-height: 1024px;
+    min-height: 1024px;
   }
 
   .header__theme-menu-list {
@@ -422,8 +419,8 @@ p.gallery-title {
   }
 
   .content__what-card {
-    grid-template: repeat(3, max-content) / 1fr;
     gap: 0;
+    grid-template: repeat(3, max-content) / 1fr;
   }
 
   footer .accent-title-decor {
@@ -462,7 +459,7 @@ p.gallery-title {
     grid-template-rows:
       minmax(min-content, max-content) 4.5fr minmax(min-content, max-content)
       1fr minmax(min-content, max-content) 1.3fr;
-      min-height: 667px;
+    min-height: 667px;
   }
 
   .header__theme-menu-list {
@@ -566,8 +563,8 @@ p.gallery-title {
   }
 
   .footer {
-    padding: 10px;
     min-height: 667px;
+    padding: 10px;
   }
 
   .footer::before {
@@ -580,4 +577,3 @@ p.gallery-title {
     left: 10px;
   }
 }
-
